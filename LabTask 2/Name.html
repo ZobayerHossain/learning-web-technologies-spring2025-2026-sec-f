@@ -1,0 +1,25 @@
+<!-- name_validation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Validation</title>
+    <script>
+        function validateName() {
+            let name = document.getElementById("name").value;
+            let namePattern = /^[a-zA-Z][a-zA-Z .-]*\s[a-zA-Z .-]*$/;
+            if (!name.match(namePattern)) {
+                alert("Invalid name: Must contain at least two words and start with a letter.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateName()">
+        <label>Name:</label><br>
+        <input type="text" id="name"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

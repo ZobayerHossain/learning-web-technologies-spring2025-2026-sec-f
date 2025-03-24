@@ -1,0 +1,26 @@
+<!-- radio_validation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Degree Selection</title>
+    <script>
+        function validateRadio() {
+            let radios = document.querySelectorAll("input[name='degree']:checked");
+            if (radios.length === 0) {
+                alert("Please select a degree.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateRadio()">
+        <label>Degree:</label><br>
+        <input type="radio" name="degree" value="SSC">SSC
+        <input type="radio" name="degree" value="HSC">HSC
+        <input type="radio" name="degree" value="BSC">BSC<br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

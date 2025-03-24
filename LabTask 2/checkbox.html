@@ -1,0 +1,26 @@
+<!-- checkbox_validation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gender Selection</title>
+    <script>
+        function validateCheckbox() {
+            let checkboxes = document.querySelectorAll("input[name='gender']:checked");
+            if (checkboxes.length === 0) {
+                alert("At least one gender must be selected.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateCheckbox()">
+        <label>Gender:</label><br>
+        <input type="checkbox" name="gender" value="Male">Male
+        <input type="checkbox" name="gender" value="Female">Female
+        <input type="checkbox" name="gender" value="Other">Other<br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
